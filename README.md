@@ -236,3 +236,5 @@ For pull requests, editor preferences are available in the [editor config](.edit
 
 
 # Deploy through Tomcat
+
+Make sure tomcat is installed in your webservers
