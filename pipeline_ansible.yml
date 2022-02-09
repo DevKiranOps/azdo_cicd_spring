@@ -9,6 +9,8 @@ variables:
     value: true  
   - name: AgentPool
     value: MyAgentPool
+  - name: RESOURCE_GROUP
+    value: kops-rg  
   - name: DeployEnvironment
     value: kops-dev-web  
 stages:
