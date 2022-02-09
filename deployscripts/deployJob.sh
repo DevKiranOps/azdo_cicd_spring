@@ -16,5 +16,5 @@ az vm list --resource-group $RESOURCE_GROUP --show-details \
            --query "[?contains(name, 'web')].privateIps" -otsv >> hosts  
 
 echo "Run Ansible Playbook"
-ansible-playbook -i hosts tomcat_deploy.yaml --private-key id_rsa
+ansible-playbook -i hosts deployscripts/tomcat_deploy.yaml --private-key id_rsa
 
