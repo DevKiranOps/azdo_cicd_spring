@@ -26,10 +26,9 @@ stages:
       - task: Bash@3
         inputs:
           targetType: 'filePath'
-          filePath: deployscripts/buildJob.sh
-          Arguments: $(Build.BuildNumber)
+          filePath: deployscripts/buildJob.sh  
         env:
-          buildNumber: $(Build.BuildNumber)
+          buildId: $(Build.BuildID)
           buildDir: $(Pipeline.Workspace) 
       - task: CopyFiles@2
         displayName: 'Copy Files to artifact directory'
