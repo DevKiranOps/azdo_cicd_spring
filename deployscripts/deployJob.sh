@@ -2,13 +2,21 @@
 
 
 RESOURCE_GROUP=$1
-
+ARTIFACT_PATH=$2
 chmod 400 id_rsa
+
+echo $ARTIFACT_PATH
+ls -al $ARTIFACT_PATH
+
+ARTIFACT_NAME=$(realpath $ARTIFACT_PATH/*.war)
+
+echo $ARTIFACT_NAME
 
 echo -e "Host 10.*\n \tStrictHostKeyChecking no" > ~/.ssh/config
 
-cat ~/.ssh/config 
+sed -i "s,\#warfilePath\#,$warfilePath,g" deployscripts/vars.yaml
 
+cat deployscripts/vars.yaml
 
 echo "Create hosts file"
 echo "[webservers]" > hosts 

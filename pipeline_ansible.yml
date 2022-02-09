@@ -70,5 +70,5 @@ stages:
             scriptType: bash
             scriptLocation: scriptPath
             scriptPath: $(Agent.BuildDirectory)/s/deployscripts/deployJob.sh
-            Arguments: $(RESOURCE_GROUP)   
+            Arguments: $(RESOURCE_GROUP) $(Build.ArtifactStagingDirectory)
         
