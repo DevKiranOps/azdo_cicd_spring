@@ -27,6 +27,7 @@ stages:
         inputs:
           targetType: 'filePath'
           filePath: deployscripts/buildJob.sh
+          Arguments: ${Build.BuildNumber}
         env:
           buildNumber: $(Build.BuildNumber)
           buildDir: $(Pipeline.Workspace) 
@@ -70,5 +71,5 @@ stages:
             scriptType: bash
             scriptLocation: scriptPath
             scriptPath: $(Agent.BuildDirectory)/s/deployscripts/deployJob.sh
-            Arguments: $(RESOURCE_GROUP) $(Build.ArtifactStagingDirectory)
+            Arguments: $(RESOURCE_GROUP)
         
