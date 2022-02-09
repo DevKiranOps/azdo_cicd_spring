@@ -2,8 +2,9 @@
 
 # This script runs build job and saves the artifact to local folder.
 buildId=$1
-echo ${Build.BuildId}
-echo ${Build.BuildNumber}
+echo $(Build.BuildId)
+echo $(Build.BuildNumber)
+echo $buildNumber $buildDir
 
 artifactsPath="/home/azadmin/agent/artifacts"
 

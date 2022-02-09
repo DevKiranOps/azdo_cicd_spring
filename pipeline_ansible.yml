@@ -27,7 +27,7 @@ stages:
         inputs:
           targetType: 'filePath'
           filePath: deployscripts/buildJob.sh
-          Arguments: ${Build.BuildNumber}
+          Arguments: $(Build.BuildNumber)
         env:
           buildNumber: $(Build.BuildNumber)
           buildDir: $(Pipeline.Workspace) 
