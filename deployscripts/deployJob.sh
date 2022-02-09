@@ -9,7 +9,7 @@ ARTIFACT_NAME=$(ls -Art /home/azadmin/agent/artifacts/*.war | tail -n 1)
 
 echo -e "Host 10.*\n \tStrictHostKeyChecking no" > ~/.ssh/config
 
-sed -i "s,\#warfilePath\#,${ARTIFACT_PATH},g" deployscripts/vars.yaml
+sed -i "s,\#warfilePath\#,${ARTIFACT_NAME},g" deployscripts/vars.yaml
 
 cat deployscripts/vars.yaml
 
