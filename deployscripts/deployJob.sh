@@ -4,13 +4,8 @@
 RESOURCE_GROUP=$1
 
 chmod 400 id_rsa
-echo "test test test"
 
 ARTIFACT_NAME=$(ls -Art /home/azadmin/agent/artifacts/*.war | tail -n 1)
-echo "Artifact name is $ARTIFACT_NAME"
-
-ARTIFACT_PATH=$(realpath $ARTIFACT_NAME)
-echo "Artifact path is $ARTIFACT_PATH"
 
 echo -e "Host 10.*\n \tStrictHostKeyChecking no" > ~/.ssh/config
 
