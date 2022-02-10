@@ -1,3 +1,4 @@
+name: deployTomcat
 trigger: 
   - main
   - feature*
@@ -11,8 +12,7 @@ variables:
     value: MyAgentPool
   - name: RESOURCE_GROUP
     value: kops-rg  
-  - name: DeployEnvironment
-    value: kops-dev-web  
+
 stages:
   - stage: BuildApp 
     condition: always()
@@ -57,12 +57,7 @@ stages:
             sudo chmod 400 $(privkey.secureFilePath)
             sudo mkdir -p $HOME/.ssh  
             cat $(privkey.secureFilePath) > id_rsa
-            cp id_rsa $HOME/.ssh
-        - task: DownloadPipelineArtifact@2
-          inputs:
-            source: 'current'
-            artifact: petclinic
-            path: '$(Build.ArtifactStagingDirectory)' 
+            cp id_rsa $HOME/.ssh        
         - task: AzureCLI@2
           displayName: 'Ansible'
           inputs:
